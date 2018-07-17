@@ -9,7 +9,7 @@ feature 'Listings page ' do
 end
 
 feature 'New listings page ' do
-  scenario 'A user can add a listings page' do
+  scenario 'A user can add a listing' do
     visit('/listings/new')
     fill_in('name', with: 'Joe')
     fill_in('price', with: '50')
