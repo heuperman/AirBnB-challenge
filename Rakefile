@@ -3,7 +3,7 @@ require 'pg'
 if ENV['RACK_ENV'] != 'production'
   require 'rspec/core/rake_task'
 
-  Rspec::Core::RakeTask.new :spec
+  RSpec::Core::RakeTask.new :spec
 
   task default: [:spec]
 end
