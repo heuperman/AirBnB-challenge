@@ -1,3 +1,9 @@
+<% @listings.each do |listing| %>
+<%=listing.name%>
+<%=listing.price%> <br>
+<%=listing.description%> <br>
+<% end %>
+
 <form action="/listings/new">
 <button type="submit" value="Add listing">Add a new listing</button>
 </form>
