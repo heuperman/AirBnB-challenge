@@ -8,6 +8,8 @@ feature 'New listings page ' do
     fill_in('price', with: '50')
     fill_in('description', with: 'Test description of listing')
     click_button('Save')
-    expect(current_path).to eq '/listings'
+    expect(page).to have_content 'Test name of listing'
+    expect(page).to have_content '50'
+    expect(page).to have_content 'Test description of listing'
   end
 end
