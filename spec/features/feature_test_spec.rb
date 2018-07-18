@@ -13,3 +13,19 @@ feature 'New listings page ' do
     expect(page).to have_content 'Test description of listing'
   end
 end
+
+feature 'Sign up page' do
+  scenario 'A new user can enter their details to become a user' do
+    visit '/'
+    click_button('signup')
+    expect(page).to have_content 'SIGN UP HERE WOULD YA?'
+end
+end
+
+feature 'Login' do
+  scenario 'A user can log in and be directed to the listings page' do
+    visit '/'
+    click_button('next')
+    expect(page).to have_content 'Add a new listing'
+  end
+end

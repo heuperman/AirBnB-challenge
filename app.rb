@@ -8,6 +8,9 @@ class BnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
 
+  get '/' do
+    erb(:index)
+end
   get '/listings' do
     @listings = Listing.all
     erb(:listings)
@@ -21,4 +24,8 @@ class BnB < Sinatra::Base
     Listing.create(params['name'], params['description'], params['price'])
     redirect '/listings'
   end
+
+  get '/users/new' do
+    erb(:users_new)
+  end 
 end
