@@ -10,7 +10,6 @@ class BnB < Sinatra::Base
 
   get '/listings' do
     @listings = Listing.all
-    Listing.all
     erb(:listings)
   end
 
