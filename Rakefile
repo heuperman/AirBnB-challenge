@@ -33,7 +33,7 @@ task :setup do
 end
 
 task :teardown do
-  p "Destroying databases...type ‘y’ to confirm that you want to destroy the"\
+  p "Destroying databases...type 'y’ to confirm that you want to destroy the"\
   " AirBnB databases. This will remove all data in those databases!"
 
   confirm = STDIN.gets.chomp
@@ -44,4 +44,17 @@ task :teardown do
     connection = PG.connect
     connection.exec("DROP DATABASE #{database};")
   end
+end
+
+task :populate do
+  p "Inserting example listings to the production database"
+    connection = PG.connect(dbname: "airbnb")
+
+    connection.exec("INSERT INTO listings VALUES(1, 'Hogwarts boys dorm', 'Magical dorm room for rent', 50);")
+    connection.exec("INSERT INTO listings VALUES(2, '4 Privet Drive', 'A roomy cosy space under staircase', 25);")
+    connection.exec("INSERT INTO listings VALUES(3, 'Azkaban cell', 'No frills room available all year round!', 10);")
+    connection.exec("INSERT INTO listings VALUES(4, 'Gryffindor House', 'A lovely warm space, would suit family of 300', 100);")
+    connection.exec("INSERT INTO listings VALUES(5, 'Slytherin House', 'A welcoming space, would suit ex-murders', 50);")
+    connection.exec("INSERT INTO listings VALUES(6, 'Hufflepuff House', 'A spacious place, great for all types of people', 75);")
+    connection.exec("INSERT INTO listings VALUES(7, 'Ravenclaw House', 'A warm and cozy space, would suit family of 100', 75);")
 end
