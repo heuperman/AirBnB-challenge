@@ -58,3 +58,10 @@ task :populate do
     connection.exec("INSERT INTO listings (name, description, price) VALUES('Hufflepuff House', 'A spacious place, great for all types of people', 75);")
     connection.exec("INSERT INTO listings (name, description, price) VALUES('Ravenclaw House', 'A warm and cozy space, would suit family of 100', 75);")
 end
+
+task :truncate do
+  p "Truncating the production database"
+    connection = PG.connect(dbname: "airbnb")
+
+    connection.exec('TRUNCATE listings;')
+end
