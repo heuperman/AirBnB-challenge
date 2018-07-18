@@ -33,7 +33,7 @@ task :setup do
 end
 
 task :teardown do
-  p "Destroying databases...type ‘y’ to confirm that you want to destroy the"\
+  p "Destroying databases...type 'y’ to confirm that you want to destroy the"\
   " AirBnB databases. This will remove all data in those databases!"
 
   confirm = STDIN.gets.chomp
