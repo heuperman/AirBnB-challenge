@@ -10,28 +10,28 @@ class Listing
   end
 
   def self.all
-    if ENV['RACK_ENV'] == 'test'
-      @connection = PG.connect(dbname: 'airbnb_test')
-    else
-      @connection = PG.connect(dbname: 'airbnb')
-    end
-    result = @connection.exec('SELECT * FROM listings')
+    connection = connect_database
+    result = connection.exec('SELECT * FROM listings')
     result.map do |listing|
-       Listing.new(listing['id'], listing['name'], listing['description'], listing['price'])
+       create_new_listing(listing)
      end
   end
 
   def self.create(name, description, price)
-    if ENV['RACK_ENV'] == 'test'
-      @connection = PG.connect(dbname: 'airbnb_test')
-    else
-      @connection = PG.connect(dbname: 'airbnb')
-    end
-    result = @connection.exec(
+    connection = connect_database
+    result = connection.exec(
       'INSERT INTO listings (name, description, price) ' +
       "VALUES ('#{name}', '#{description}', '#{price}')" +
       ' RETURNING id, name, description, price;'
     ).first
+    create_new_listing(result)
+  end
+
+  def ==(other)
+    @id = other.id
+  end
+
+  def self.create_new_listing(result)
     Listing.new(
       result['id'],
       result['name'],
@@ -40,7 +40,13 @@ class Listing
     )
   end
 
-  def ==(other)
-    @id = other.id
+  def self.connect_database
+    if ENV['RACK_ENV'] == 'test'
+      PG.connect(dbname: 'airbnb_test')
+    else
+      PG.connect(dbname: 'airbnb')
+    end
   end
+
+
 end

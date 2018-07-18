@@ -6,7 +6,6 @@ require 'rake'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-require_relative '../app'
 
 Rake.application.load_rakefile
 
