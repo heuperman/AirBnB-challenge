@@ -1,34 +1,15 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="/makersbnb.css" rel="stylesheet" type="text/css">
 </head>
-<div><% @listings.each do |listing| %>
-  <p id="listing-name"><b><%=listing.name%></b></p>
-  <p id="listing-price">£<%=listing.price%> per night</p>
-  <p id="listing-description"><%=listing.description%></p>
-<% end %></div>
+<% @listings.each do |listing| %>
+  <div>
+    <p id="listing-name"><b><%=listing.name%></b></p>
+    <p id="listing-price">£<%=listing.price%> per night</p>
+    <p id="listing-description"><%=listing.description%></p>
+  </div>
+<% end %>
 
 <form action="/listings/new">
-  <button type="submit" value="Add listing">Add a new listing</button>
+  <button type="submit" value="Add listing"><b>Add a new listing</b></button>
 </form>
-
-<style>
-div {
-  border: 3px solid lightgray;
-  padding: 25px;
-  margin: 25px;
-  font-family: 'Raleway', sans-serif;
-}
-
-#listing-name {
-  font-size: 28px;
-}
-
-#listing-price {
-  font-size: 20px;
-  color: lightgray;
-}
-
-#listing-description {
-  font-size: 16px;
-}
-</style>

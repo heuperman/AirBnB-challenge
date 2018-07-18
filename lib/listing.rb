@@ -47,6 +47,4 @@ class Listing
       PG.connect(dbname: 'airbnb')
     end
   end
-
-
 end
