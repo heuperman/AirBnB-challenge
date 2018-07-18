@@ -1,0 +1,28 @@
+div {
+  border: 3px solid lightgray;
+  padding: 25px;
+  margin: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+
+button {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding: 25px;
+  margin: 25px;
+  background-color: black;
+}
+
+#listing-name {
+  font-size: 28px;
+}
+
+#listing-price {
+  font-size: 20px;
+  color: lightgray;
+}
+
+#listing-description {
+  font-size: 16px;
+}
