@@ -1,16 +1,36 @@
-body, html {
+::-webkit-input-placeholder { /* Chrome */
+  color: black;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: black;
+  opacity: 1;
+}
+div {
+  border: 3px solid lightgray;
+  padding: 25px;
+  margin: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+body {
     height: 100%;
     margin: 0;
 }
 
 .bg {
     /* The image used */
-    background-image: url("https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f2cf76f5fe8c1347af38e4b515499e62&auto=format&fit=crop&w=1778&q=80");
+    background-image: url("background2.jpeg");
 
     /* Full height */
     height: 100%;
 
-    /* Center and scale the image nicely */
+     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,17 +46,12 @@ h1 {
 
 
 #sign_up {
-  background-color: white;
-  color: black;
-  padding: 2px 8px;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border: 2px solid black;
-  width: 150px;
-  margin:0 auto;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding: 25px;
+  margin: 25px;
+  background-color: black;
 }
 
 #sign_up:hover {
@@ -46,17 +61,12 @@ h1 {
 }
 
 #log_in {
-  background-color: white;
-  color: black;
-  padding: 2px 8px;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border: 2px solid black;
-  width: 150px;
-  margin:0 auto;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding: 25px;
+  margin: 25px;
+  background-color: black;
 }
 
 #log_in:hover {
@@ -76,29 +86,31 @@ h1 {
 }
 
 #email {
+
   font-size: 18px;
   text-align: center;
+
 }
 
 #password {
   font-size: 18px;
   text-align: center;
+
 }
 
 #email_border {
-  border: 2px solid black;
-  border-radius: 8px;
+background-color: transparent;
+border-bottom: solid 1px black;
+border-top: none;
+border-left: none;
+border-right: none;
 }
 
 #password_border {
-  border: 2px solid black;
-  border-radius: 8px;
-}
+  background-color: transparent;
+  border-bottom: solid 1px black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 
-
-div {
-  border: 3px solid lightgray;
-  padding: 25px;
-  margin: 25px;
-  font-family: 'Raleway', sans-serif;
 }
