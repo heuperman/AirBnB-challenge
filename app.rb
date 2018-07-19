@@ -27,5 +27,5 @@ end
 
   get '/users/new' do
     erb(:users_new)
-  end 
+  end
 end

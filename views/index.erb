@@ -1,13 +1,22 @@
-<form action='/listings' method="get">
-Login </br>
-</br>
-Username:
-  <input type = "text" name= "Username">
-Password:
-  <input type ="text" name= "Password">
-  <button type="submit" value="next">Next</button>
-</form>
 
-<form action='/users/new' method ="get">
-  <button type="submit" value="signup">Sign Up!</button>
-</form>
+<body class='bg'>
+<center>
+  <div>
+    <form action='/listings' method="get">
+      <h1> Welcome to Makers BnB </h1>
+    </br>
+    <p id="email"> Email:
+	     <input id='email_border' type ="text" name= "Email" placeholder= "Email"></p>
+    <p id="password"> Password:
+      <input id='password_border' type ="text" name= "Password" placeholder= "Password"></p>
+
+    <button id="log_in" type="submit" value="next">LOG IN</button>
+    </form>
+    <br>
+
+    <form action='/users/new' method ="get">
+    <button id="sign_up" type="submit" value="signup">SIGN UP!</button>
+    </form>
+  </div>
+</center>
+</body>
