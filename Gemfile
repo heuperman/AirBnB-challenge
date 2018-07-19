@@ -6,6 +6,7 @@ gem 'rake'
 gem 'sinatra'
 
 group :test do
+  gem 'bcrypt'
   gem 'capybara'
   gem 'pg'
   gem 'rspec'
