@@ -1,0 +1,35 @@
+div {
+  border: 3px solid lightgray;
+  padding:10px;
+  margin: 400px;
+  width: 400px;
+  font-family: 'Raleway', sans-serif;
+}
+
+button {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  padding: 5px;
+  margin: 5px;
+  background-color: black;
+}
+
+#Add-a-Short-description{
+  font-size: 16px;
+  margin: 20px 0px;
+}
+
+#number{
+  margin: 10px 10px;
+}
+
+#Add-a-Price{
+  font-size: 15px;
+  color: black;
+  margin: 20px 0px;
+}
+
+#Add-a-name {
+  font-size: 15px;
+}
