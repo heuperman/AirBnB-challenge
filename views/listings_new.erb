@@ -1,9 +1,18 @@
+<head>
+ <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+ <link href="/listingsnew.css" rel="stylesheet" type="text/css">
+</head>
+
+<div>
 <form action="/listings/new" method ="post">
-  Add a Name:
+  <span id="Add-a-Name"><b>Add a Name:</b></span>
   <input type="text" name="name">
-  Add a Price:
-  <input type="number" name="price">
-  Add a short description:
-  <input type="text" name="description">
+<br></br>
+  <span id="Add-a-Price"><b>Add a Price:</b></span>
+  <span id="number"><input type="number" name="price"></span>
+<br></br>
+  <span id="Add-a-Short-description"><b>Add a Short description:</b></span>
+  <textarea rows="20" cols="60"></textarea>
   <button type="submit" value="Save">Save</button>
 </form>
+</div>
