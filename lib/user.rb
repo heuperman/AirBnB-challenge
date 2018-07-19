@@ -1,4 +1,5 @@
 require 'pg'
+require 'bcrypt'
 class User
   attr_reader :id
 
@@ -9,9 +10,10 @@ class User
   end
 
   def self.create(email, password)
+    encrypted_password = BCrypt::Password.create(password)
     connection = connect_database
     result = connection.exec("INSERT INTO users (email, password) VALUES" +
-    " ('#{email}', '#{password}') RETURNING id, email, password;")
+    " ('#{email}', '#{encrypted_password}') RETURNING id, email, password;")
     create_new_user(result)
   end
 
@@ -26,9 +28,12 @@ class User
   def self.authenticate(email, password)
     connection = connect_database
     result = connection.exec("SELECT * FROM users WHERE email = '#{email}'")
-    return unless result.any?
-    return unless result.first['password'] == password
-    create_new_user(result)
+    if result.any?
+      encrypted_password = BCrypt::Password.new(result.first['password'])
+      if encrypted_password == password
+        create_new_user(result)
+      end
+    end
   end
 
   def self.create_new_user(result)
