@@ -7,6 +7,11 @@
     <p id="listing-name"><b><%=listing.name%></b></p>
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
+
+    <form action="/listings/<%=listing.id%>/request" method ="post">
+      <input type="hidden" name="id" value="<%=listing.id%>">
+      <button type="submit" value="Book listing"><b>Book listing</b></button>
+    </form>
   </div>
 <% end %>
 
