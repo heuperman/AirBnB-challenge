@@ -30,13 +30,13 @@ end
   end
 
   get '/users/my-listings' do
-    @listings_pending = Listing.all_open_requests
-    @listings_not_pending = Listing.all_closed_requests
+    @requests_pending = Listing.all_open_requests
+    @requests_confirmed = Listing.all_closed_requests
     erb(:users_my_listings)
   end
 
   post '/users/my-listings' do
-    Listing.book_listing(params['id'])
+    Listing.confirm_booking(params['id'])
     redirect '/users/my-listings'
   end
 

@@ -71,7 +71,7 @@ class Listing
   end
 
   # this methods manages the booking
-  def self.book_listing(id)
+  def self.confirm_booking(id)
     connection = connect_database
     connection.exec("UPDATE listings SET available = 'false', requested = 'false' WHERE id = '#{id}'")
     # puts "listing booking updated"
