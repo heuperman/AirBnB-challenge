@@ -1,8 +1,8 @@
 # AirBnB Challenge
 
-*flavour text here*
+*Tired of living in your muggle hovel? Try AirBnB and find the magic chamber of your dreams*
 
-description here
+This app let's user list their spaces and view spaces listed by others.
 
 ## User Stories  
 
@@ -90,6 +90,34 @@ Clone the repository:
 Install the required gems:
 `bundle install`
 
+Preparing for database setup:
+  Install homebrew:
+  `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+  Install Postgres:
+  `$> brew install postgresql`
+
+  Allow Homebrew to start and stop the Postgres service:
+  `ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+
+  Open up Postgres:
+  `psql postgres`
+
+  Then in Postgres type:
+  `CREATE DATABASE your_user_name`
+  with your_user_name being your computer name.
+
+  Quit Postgres:
+  `\q`
+
+Set up databases:
+`rake setup`
+
+Populate the databases with samples:
+`rake populate`
+
+
 ## Usage
 Enter the following commands in your terminal:
 
@@ -97,23 +125,30 @@ Change into the main directory:
 `cd AirBnB-challenge.git`
 
 Run the app:
-`rackup config.ru`
+`rackup`
 
-*add example images here*
+![listings](https://i.imgur.com/UDMCv2I.png)
 
-Then open your browser, head to http://localhost:9292/ where you should find the page shown above. Then simply follow the instructions on the page.
+Then open your browser, head to http://localhost:9292/listings where you should find the page shown above. Then simply follow the instructions on the page.
 
 ## Running tests
-This app comes with a full feature test and unit tests with 100% coverage (determined using the simplecov and istanbul).
+This app comes with a full feature test and unit tests.
 To run all available tests enter `rspec` in your terminal.
+
+## Removing databases
+
+In your terminal type: `rake teardown` and confirm to remove all airbnb databases.
 
 ## Built with
 Sinatra -- as the web framework  
-Jasmine -- as the JavaScript testing framework
-etc
+Rspec -- as the Ruby test suite  
+Capybara -- as the Sinatra test suite  
+PostgreSQL -- as the database system   
 
 ## Authors
+[Yvonne Tang](https://github.com/YvCodeHong)  
+[Jay Khan](https://github.com/neobay991)  
+[Jeff Hung](https://github.com/jeff1108)  
+[Bibi Collins](https://github.com/bibicollins)  
+[Cornelis Heuperman](https://github.com/heuperman)  
 The good people at [Makers Academy](https://makers.tech/) -- instructions  
-
-Team teamname:
-Our names and links to github
