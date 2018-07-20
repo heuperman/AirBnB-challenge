@@ -1,13 +1,24 @@
-<form action='/listings' method="get">
-Login </br>
-</br>
-Username:
-  <input type = "text" name= "Username">
-Password:
-  <input type ="text" name= "Password">
-  <button type="submit" value="next">Next</button>
-</form>
+<head>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+  <link href="/index.css" rel="stylesheet" type="text/css">
+</head>
+<body class='bg'>
+<center>
+  <div>
+    <h1> Welcome to Makers BnB </h1>
+    <form action='/sessions/new' method="post">
+    </br>
+    <p id="email">
+	     <input id='email_border' type ="text"  name= "email" placeholder= "Email"></p>
+    <p id="password">
+      <input id='password_border' type ="text"  name= "password" placeholder= "Password"></p>
+      <%=styled_flash%>
+    <button id="log_in" type="submit" value="next">LOG IN</button>
+    </form>
 
-<form action='/users/new' method ="get">
-  <button type="submit" value="signup">Sign Up!</button>
-</form>
+    <form action='/users/new' method ="get">
+    <button id="sign_up" type="submit" value="signup">SIGN UP!</button>
+    </form>
+  </div>
+</center>
+</body>

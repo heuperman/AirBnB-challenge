@@ -8,12 +8,18 @@
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
     <input type='text' class='date'>
+
+    <form action="/listings/<%= listing.id %>/request" method ="post">
+      <input type="hidden" name="id" value="<%=listing.id%>">
+      <button type="submit" value="Book listing"><b>Book listing</b></button>
+    </form>
   </div>
 <% end %>
 
 <form action="/listings/new">
   <button type="submit" value="Add listing"><b>Add a new listing</b></button>
 </form>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -35,3 +41,6 @@
       showOtherMonths: true,
   });
 </script>
+<form action="/users/<%= @user_id %>/requests">
+  <button type="submit" value="View requests"><b>View requests</b></button>
+</form>
