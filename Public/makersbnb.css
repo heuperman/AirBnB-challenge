@@ -1,7 +1,6 @@
 div {
-  border: 3px solid lightgray;
-  padding: 25px;
-  margin: 25px;
+  padding: 2px;
+  margin: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -12,6 +11,13 @@ button {
   padding: 25px;
   margin: 25px;
   background-color: black;
+}
+
+#listing-div {
+  border: 3px solid lightgray;
+  padding: 25px;
+  margin: 25px;
+  font-family: 'Raleway', sans-serif;
 }
 
 #listing-name {
@@ -25,4 +31,97 @@ button {
 
 #listing-description {
   font-size: 16px;
+}
+
+#calendar {
+  padding: 4px;
+  margin: 400px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.ui-datepicker {
+    display: none;
+    width: 294px;
+    padding: 35px;
+    cursor: default;
+
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+
+    background: white;
+    border: 1px solid lightgray;
+}
+
+.ui-datepicker-header {
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.ui-datepicker-title { text-align: center; }
+
+.ui-datepicker-month {
+    position: relative;
+    font-size: 16px;
+    padding-right: 15px;
+    color: black;
+}
+
+.ui-datepicker-year {
+    padding-left: 8px;
+    font-size: 16px;
+    color: black;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    position: absolute;
+    top: -2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ui-datepicker-prev {
+    left: 0;
+    padding-left: 0;
+}
+
+.ui-datepicker-next {
+    right: 0;
+    padding-right: 0;
+}
+
+.ui-datepicker-prev span,
+.ui-datepicker-next span{
+      color: black;
+}
+
+.ui-datepicker-calendar th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    text-align: center;
+    font-weight: normal;
+    color: black;
+}
+
+.ui-datepicker-calendar td {
+    padding: 0 7px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    display: block;
+    width: 26px;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    color: #6a9113;
+    border: 1px solid #6a9113;
 }

@@ -3,10 +3,11 @@
   <link href="/makersbnb.css" rel="stylesheet" type="text/css">
 </head>
 <% @listings.each do |listing| %>
-  <div>
+  <div id="listing-div">
     <p id="listing-name"><b><%=listing.name%></b></p>
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
+    <input type='text' class='date'>
 
     <form action="/listings/<%= listing.id %>/request" method ="post">
       <input type="hidden" name="id" value="<%=listing.id%>">
@@ -19,6 +20,27 @@
   <button type="submit" value="Add listing"><b>Add a new listing</b></button>
 </form>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  jQuery(function($) {
+
+    $(".date").datepicker({
+      // onSelect: function(dateText) {
+      //   display("Selected date: " + dateText + "; input's current value: " + this.value);
+      // }
+    }).on("change", function() {
+    //   display("Got change event from field");
+  });
+  });
+
+  $('#calendar').datepicker({
+      inline: true,
+      firstDay: 1,
+      showOtherMonths: true,
+  });
+</script>
 <form action="/users/<%= @user_id %>/requests">
   <button type="submit" value="View requests"><b>View requests</b></button>
 </form>
