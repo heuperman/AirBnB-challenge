@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'uri'
 require 'sinatra/flash'
 require './lib/listing'
+require './lib/user'
 
 class BnB < Sinatra::Base
 
@@ -27,6 +28,11 @@ end
 
   get '/users/new' do
     erb(:users_new)
+  end
+
+  post '/users/new' do
+    User.create(params['user_name'], params['user_email'], params['user_password'])
+    redirect '/listings'
   end
 
   get '/users/my-listings' do
