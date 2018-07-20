@@ -31,7 +31,7 @@ end
   end
 
   post '/users/new' do
-    User.create(params['name'], params['email'], params['password'])
+    User.create(params['user_name'], params['user_email'], params['user_password'])
     redirect '/listings'
   end
 
