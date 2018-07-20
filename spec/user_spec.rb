@@ -5,7 +5,11 @@ describe User do
     it 'creates a new user' do
       user = create_new_user
       expect(user.id).not_to be_nil
+      expect(user.name).to eq('name')
+      expect(user.email).to eq('example@example.com')
+      expect(user.password).not_to be_nil
     end
+
     it 'hashes the password using BCrypt' do
       expect(BCrypt::Password).to receive(:create).with('p@55w0rd')
       create_new_user
