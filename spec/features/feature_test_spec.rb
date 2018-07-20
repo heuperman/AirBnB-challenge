@@ -18,7 +18,11 @@ feature 'Sign up page' do
   scenario 'A new user can enter their details to become a user' do
     visit '/'
     click_button('signup')
-    expect(page).to have_content 'SIGN UP HERE WOULD YA?'
+    fill_in('user_name', with: 'Test name of user')
+    fill_in('user_email', with: 'test@gmail.com')
+    fill_in('user_password', with: 'p1223')
+    click_button('Save')
+    expect(page).to have_content 'Add a new listing'
 end
 end
 
