@@ -8,7 +8,7 @@
 <h2>Bookings pending confirmation</h2>
 
 <% @requests_pending.each do |listing| %>
-  <div>
+  <div id="listing-div">
     <p id="listing-name"><b><%=listing.name%></b></p>
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
@@ -24,7 +24,7 @@
 <h2>Confirmed bookings</h2>
 
 <% @requests_confirmed.each do |listing| %>
-  <div>
+  <div id="listing-div">
     <p id="listing-name"><b><%=listing.name%></b></p>
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
