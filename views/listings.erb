@@ -21,22 +21,17 @@
   jQuery(function($) {
 
     $(".date").datepicker({
-      onSelect: function(dateText) {
-        display("Selected date: " + dateText + "; input's current value: " + this.value);
-      }
+      // onSelect: function(dateText) {
+      //   display("Selected date: " + dateText + "; input's current value: " + this.value);
+      // }
     }).on("change", function() {
-      display("Got change event from field");
-    });
-
-    function display(msg) {
-      $("<p>").html(msg).appendTo(document.body);
-    }
+    //   display("Got change event from field");
+  });
   });
 
   $('#calendar').datepicker({
       inline: true,
       firstDay: 1,
       showOtherMonths: true,
-      dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   });
 </script>

@@ -65,7 +65,7 @@ button {
     position: relative;
     font-size: 16px;
     padding-right: 15px;
-    color: #565656;
+    color: black;
 }
 
 .ui-datepicker-year {
@@ -125,7 +125,3 @@ button {
     color: #6a9113;
     border: 1px solid #6a9113;
 }
-
-.ui-datepicker-other-month .ui-state-default {
-   color: lightgray;
- }
