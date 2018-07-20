@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'uri'
 require 'sinatra/flash'
 require './lib/listing'
+require './lib/user'
 
 class BnB < Sinatra::Base
 
@@ -11,6 +12,17 @@ class BnB < Sinatra::Base
   get '/' do
     erb(:index)
 end
+
+post '/sessions/new' do
+   user = User.authenticate(params['email'], params['password'])
+   if user
+     redirect'/listings'
+   else
+     flash[:notice] = 'invalid email or password'
+     redirect('/')
+   end
+ end
+
   get '/listings' do
     @listings = Listing.all
     erb(:listings)

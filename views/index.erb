@@ -5,14 +5,14 @@
 <body class='bg'>
 <center>
   <div>
-    <form action='/listings' method="get">
-      <h1> Welcome to Makers BnB </h1>
+    <h1> Welcome to Makers BnB </h1>
+    <form action='/sessions/new' method="post">
     </br>
     <p id="email">
-	     <input id='email_border' type ="text"  name= "Email" placeholder= "Email"></p>
+	     <input id='email_border' type ="text"  name= "email" placeholder= "Email"></p>
     <p id="password">
-      <input id='password_border' type ="text"  name= "Password" placeholder= "Password"></p>
-
+      <input id='password_border' type ="text"  name= "password" placeholder= "Password"></p>
+      <%=styled_flash%>
     <button id="log_in" type="submit" value="next">LOG IN</button>
     </form>
 
