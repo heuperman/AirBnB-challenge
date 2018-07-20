@@ -1,19 +1,20 @@
 require 'pg'
 require 'bcrypt'
 class User
-  attr_reader :id
+  attr_reader :id, :name, :email, :password
 
-  def initialize(id, email, password)
+  def initialize(id, name, email, password)
     @id = id
     @email = email
     @password = password
+    @name = name
   end
 
-  def self.create(email, password)
+  def self.create(name, email, password)
     encrypted_password = BCrypt::Password.create(password)
     connection = connect_database
-    result = connection.exec("INSERT INTO users (email, password) VALUES" +
-    " ('#{email}', '#{encrypted_password}') RETURNING id, email, password;")
+    result = connection.exec("INSERT INTO users (name, email, password) VALUES" +
+    " ('#{name}', '#{email}', '#{encrypted_password}') RETURNING id, name, email, password;")
     create_new_user(result)
   end
 
@@ -39,6 +40,7 @@ class User
   def self.create_new_user(result)
     User.new(
       result.first['id'],
+      result.first['name'],
       result.first['email'],
       result.first['password']
     )
