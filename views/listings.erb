@@ -8,7 +8,7 @@
     <p id="listing-price">£<%=listing.price%> per night</p>
     <p id="listing-description"><%=listing.description%></p>
 
-    <form action="/listings/<%=listing.id%>/request" method ="post">
+    <form action="/listings/<%= listing.id %>/request" method ="post">
       <input type="hidden" name="id" value="<%=listing.id%>">
       <button type="submit" value="Book listing"><b>Book listing</b></button>
     </form>
@@ -17,4 +17,8 @@
 
 <form action="/listings/new">
   <button type="submit" value="Add listing"><b>Add a new listing</b></button>
+</form>
+
+<form action="/users/<%= @user_id %>/requests">
+  <button type="submit" value="View requests"><b>View requests</b></button>
 </form>
